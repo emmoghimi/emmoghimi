@@ -1,0 +1,17 @@
+@import "mixins";
+.app{
+    &--home{
+        &--header{
+            @include header-l();
+        }
+        &--intro{
+            @include intro-l();
+        }
+        &--information{
+            @include information-l();
+        }
+        &--skills{
+            @include skills-l();
+        }
+    }
+}

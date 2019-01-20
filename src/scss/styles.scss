@@ -1,0 +1,20 @@
+@import "vars";
+@import "layout";
+@import "mixins";
+@import "basics";
+.app{
+    &--home{
+        &--header{
+            @include header-s();
+        }
+        &--intro{
+            @include intro-s();
+        }
+        &--information{
+            @include information-s();
+        }
+        &--skills{
+            @include skills-s();
+        }
+    }
+}
