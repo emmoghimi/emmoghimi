@@ -5,10 +5,10 @@
 .app{
     &--home{
         &--header{
-            @include header-s();
+            @include header-s(#283655,#f1f1f2);
         }
         &--intro{
-            @include intro-s();
+            @include intro-s(#1e1f26,#d0e1f9,#283655,#f1f1f2);
         }
         &--information{
             @include information-s();

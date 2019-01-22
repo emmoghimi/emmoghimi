@@ -1,5 +1,5 @@
 <template>
-  <div id="skills" class="app--home--skills">
+  <div id="skills" class="app--home--skills" data-aos="fade">
     <div class="app--home--skills--container container d-flex flex-column align-items-start">
       <p class="app--home--skills--container--tittle">My skills</p>
       <ul class="app--home--skills--container--nav d-flex align-items-center container nav ">
