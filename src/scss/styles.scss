@@ -11,7 +11,7 @@
             @include intro-s(#1e1f26,#d0e1f9,#283655,#f1f1f2,#24292E,#1DA1F2,#292961,#E34329,#DD5347);
         }
         &--information{
-            @include information-s();
+            @include information-s(#1e1f26);
         }
         &--skills{
             @include skills-s();

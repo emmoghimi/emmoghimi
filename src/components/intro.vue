@@ -8,7 +8,7 @@
             <li class="app--home--intro--container--social-network--nav--github nav-item"><a href="http://github.com/emmoghimi" target="_blank" class="nav-link"><i class="fab fa-github"></i></a></li>
             <li class="app--home--intro--container--social-network--nav--phone nav-item" @click="phoneInfo"><a href="#6" class="nav-link"><i class="fas fa-mobile-alt"></i></a></li>
             <li class="app--home--intro--container--social-network--nav--twitter nav-item"><a href="http://twitter.com/emmoghimi" target="_blank" class="nav-link"><i class="fab fa-twitter"></i></a></li>
-            <li class="app--home--intro--container--social-network--nav--gmail nav-item"><a href="https://mail.google.com/mail/?view=cm&fs=1&tf=1" target="_blank" class="nav-link"><i class="fas fa-envelope"></i></a></li>
+            <li class="app--home--intro--container--social-network--nav--gmail nav-item"><a href="https://mail.google.com/mail/?view=cm&fs=1&to=emmoghimi@gmail.com" target="_blank" class="nav-link"><i class="fas fa-envelope"></i></a></li>
           </ul>
       </div>
     </div>
