@@ -101,9 +101,34 @@
         text-align: $center;
         align-items: $center;
         justify-content: $center;
+        &--social-network{
+            &--nav{
+                li{
+                    display: $flex;
+                    align-items: $center;
+                    justify-content: $center;
+                }
+            }
+        }
     }
 }
-@mixin intro-s($bg-color,$fg-color,$bg-card,$fg-card) {
+@mixin s-cards() {
+    margin:$hundred - 98;
+    width: 12vw;
+    height: 12vw;
+    border-radius: $hundred;
+    transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+    &:hover{
+        border: 2px solid #d0e1f9;
+        transform: scale(1.1);
+        box-shadow:10px 10px 15px rgba(0,0,0,0.5);
+        a{
+            transform: scale(1.2);
+            text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+        }
+    }
+}
+@mixin intro-s($bg-color,$fg-color,$bg-card,$fg-card,$github-bg,$twitter-bg,$gitlab-bg,$gitlab-fg,$gmail-bg) {
     &--container{
         height: $hundredpx * 8;
         background: $bg-color;
@@ -125,90 +150,46 @@
             &--nav{
                 justify-content: $center;
                 align-items: $center;
-                padding: 10px;
+                padding: $hundredpx - 90;
                 &--github{
-                    background:#24292E;
-                    display: $flex;
-                    align-items: $center;
-                    justify-content: $center;
-                    margin:$hundred - 98;
-                    width: 12vw;
-                    height: 12vw;
-                    border-radius: $hundred;
+                    background:$github-bg;
+                    @include s-cards();
                     a{
                         color: $fg-card;
                         font-size: 3.5vw;
-                        i{
-
-                        }
                     }
                 }
                 &--twitter{
-                    background: #1DA1F2;
-                    display: $flex;
-                    align-items: $center;
-                    justify-content: $center;
-                    margin:$hundred - 98;
-                    width: 12vw;
-                    height: 12vw;
-                    border-radius: $hundred;
+                    background:$twitter-bg;
+                    @include s-cards();
                     a{
                         color: $fg-card;
                         font-size: 3.5vw;
-                        i{
-
-                        }
                     }
                 }
                 &--gitlab{
-                    background: #292961;
-                    display: $flex;
-                    align-items: $center;
-                    justify-content: $center;
-                    margin:$hundred - 98;
-                    width: 12vw;
-                    height: 12vw;
-                    border-radius: $hundred;
+                    background:$gitlab-bg;
+                    @include s-cards();
+                    
                     a{
-                        color: #E34329;
+                        color:$gitlab-fg;
                         font-size: 3.5vw;
-                        i{
-
-                        }
                     }
                 }
                 &--phone{
                     background: $bg-card;
-                    display: $flex;
-                    align-items: $center;
-                    justify-content: $center;
-                    margin:$hundred - 98;
-                    width: 12vw;
-                    height: 12vw;
-                    border-radius: $hundred;
+                    @include s-cards();
                     a{
                         color: $fg-card;
                         font-size: 3.5vw;
-                        i{
-
-                        }
                     }
                 }
                 &--gmail{
-                    background: #DD5347;
-                    display: $flex;
-                    align-items: $center;
-                    justify-content: $center;
-                    margin:$hundred - 98;
-                    width: 12vw;
-                    height: 12vw;
-                    border-radius: $hundred;
+                    background: $gmail-bg;
+                    @include s-cards();
                     a{
                         color: $fg-card;
                         font-size: 3.5vw;
-                        i{
-
-                        }
                     }
                 }
             }
