@@ -14,7 +14,7 @@
             @include information-s(#1e1f26);
         }
         &--skills{
-            @include skills-s();
+            @include skills-s(#1e1f26,#d0e1f9);
         }
     }
 }

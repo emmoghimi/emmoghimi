@@ -1,2 +1,4 @@
 @import "mixins";
-@include basics();
+body{
+    @include basics();
+}
