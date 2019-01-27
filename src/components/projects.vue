@@ -1,6 +1,6 @@
 <template>
   <div id="projects" class="app--home--projects container">
-    <div class="app--home--projects--container">
+    <div class="app--home--projects--container d-flex flex-column">
       <p>My projects</p>
       <div class="app--home--projects--container--first-project">
         

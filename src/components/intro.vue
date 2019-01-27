@@ -24,7 +24,8 @@ export default {
   },
   methods:{
     phoneInfo(){
-      alert("You can call me or send me message on telegram by this number \n +989372256142");
+     swal(`Send me message or call me 
+      +989372256142 "Emad Moghimi"`);
     }
   }
 }
