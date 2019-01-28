@@ -345,11 +345,105 @@
 }
 @mixin projects-l() {
     &--container{
-      
+        &--first-project{
+            &--des{
+                bottom:0;
+                top:153vw;
+                left: 16.35vw;
+                right: 0;
+                i{
+                    bottom: $hundredpx - 94;
+                }
+            }
+        }
+        &--second-project{
+            &--des{
+                bottom:0;
+                top:153vw;
+                left: 52.55vw;
+                right: 0;
+                i{
+                    bottom: $hundredpx - 94;
+                }
+            }
+        }
     }
 }
-@mixin projects-s() {
-
+@mixin projects-s($fg-color) {
+    &--title{
+        font-size: 2vw;
+        font-family: $heading;
+        color:$fg-color;
+        padding-bottom: $hundredpx - 75;
+        font-weight: $bolder;
+    }
+    &--container{
+        height: 500px;
+        img{
+            width: 30vw;
+            height: 20vw;
+        }
+        &--first-project{
+            &--des{
+                width: 30vw;
+                height: 20vw;
+                &:hover{
+                    background: rgba(30, 31, 38,0.6);
+                    p{
+                        visibility: visible;
+                    }
+                    i{
+                        visibility: visible;
+                    }
+                }
+             p{
+                 font-family: $heading;
+                 font-size: 2.5vw;
+                 padding: 0 $hundredpx - 90;
+                 font-weight: bold;
+                 color: #d0e1f9;
+                 text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+                 visibility: hidden;
+             }
+             i{
+                 font-size: 2vw;
+                 color: #d0e1f9;
+                 text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+                 visibility: hidden;
+             }
+            }
+        }
+        &--second-project{
+            &--des{
+                width: 30vw;
+                height: 20vw;
+                &:hover{
+                    background: rgba(30, 31, 38,0.6);
+                    p{
+                        visibility: visible;
+                    }
+                    i{
+                        visibility: visible;
+                    }
+                }
+                p{
+                    font-family: $heading;
+                    font-size: 2.5vw;
+                    padding: 0 $hundredpx - 90;
+                    font-weight: bold;
+                    color: #d0e1f9;
+                    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+                    visibility: hidden;
+                }
+                i{
+                    font-size: 2vw;
+                    color: #d0e1f9;
+                    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+                    visibility: hidden;
+                }
+            }
+        }
+      }
 }
 @mixin social-network-l() {
 }

@@ -1,7 +1,7 @@
 <template>
   <div id="skills" class="app--home--skills">
     <div class="app--home--skills--container container d-flex flex-column align-items-start">
-      <p class="app--home--skills--container--title">My skills</p>
+      <p class="app--home--skills--container--title">Skills</p>
       <ul class="app--home--skills--container--nav d-flex align-items-center container nav" data-aos="fade-right" data-aos-duration="1000">
         <li class="nav-item app--home--skills--container--nav--html" :id="status.html"><a class="nav-link" href="#8" @click="showHtml">HTML5</a></li>
         <li class="nav-item app--home--skills--container--nav--css" :id="status.css"><a class="nav-link" href="#9" @click="showCss">CSS3</a></li>
@@ -22,7 +22,7 @@
           <p class="app--home--skills--container--content--vue" v-show="descriptions.vue">Vue is one of the most and popular javascript frameworks, i preferred  to use vue instead of react and angular because it's a small, fast and flexible framework that allows me to reach better performance than others and faster applications.</p>
           <p class="app--home--skills--container--content--git" v-show="descriptions.git">Any application has multiple versions GIT is really helpful to make multiple versions of your application and manage them, like go back on the previous version of your code and it’s also a great tool for team working.</p>
       </div>
-      <p class="app--home--skills--container--my-resume">My resume</p>
+      <p class="app--home--skills--container--my-resume">Resume</p>
       <a class="app--home--skills--container--download" href="https://docs.google.com/document/export?format=pdf&id=1d67L-Ls0OAq5h0bwnUHNTmMicTGQMsdzSPqQXkRInbk&token=AC4w5VgkhWk9AHPRrHhF_GWf3hY0bYZnVQ%3A1548604293746&ouid=101941237622680169197&includes_info_params=true" download><i class="fas fa-download"></i> Download</a>
     </div>
   </div>

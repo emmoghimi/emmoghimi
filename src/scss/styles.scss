@@ -16,5 +16,8 @@
         &--skills{
             @include skills-s(#1e1f26,#d0e1f9);
         }
+        &--projects{
+            @include projects-s(1e1f26);
+        }
     }
 }

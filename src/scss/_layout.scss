@@ -13,5 +13,8 @@
         &--skills{
             @include skills-l();
         }
+        &--projects{
+            @include projects-l();
+        }
     }
 }
