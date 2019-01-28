@@ -3,7 +3,7 @@
     <div class="app--home--intro--container container-fluid d-flex flex-column">
       <p class="app--home--intro--container--title">Hi <br> im Emad Moghimi <br> a Front-end web developer</p>
       <div class="app--home--intro--container--social-network d-flex flex-column">
-          <ul class="app--home--intro--container--social-network--nav d-flex container nav flex-nowrap">
+          <ul class="app--home--intro--container--social-network--nav d-flex container-fluid nav flex-wrap">
             <li class="app--home--intro--container--social-network--nav--gitlab nav-item"><a href="https://gitlab.com/emmoghimi" target="_blank" class="nav-link"><i class="fab fa-gitlab"></i></a></li>
             <li class="app--home--intro--container--social-network--nav--github nav-item"><a href="http://github.com/emmoghimi" target="_blank" class="nav-link"><i class="fab fa-github"></i></a></li>
             <li class="app--home--intro--container--social-network--nav--phone nav-item" @click="phoneInfo"><a href="#6" class="nav-link"><i class="fas fa-mobile-alt"></i></a></li>

@@ -1,8 +1,8 @@
 <template>
-  <div id="skills" class="app--home--skills">
+  <div id="skills" class="app--home--skills ">
     <div class="app--home--skills--container container d-flex flex-column align-items-start">
       <p class="app--home--skills--container--title">Skills</p>
-      <ul class="app--home--skills--container--nav d-flex align-items-center container nav" data-aos="fade-right" data-aos-duration="1000">
+      <ul class="app--home--skills--container--nav d-flex align-items-center container nav" data-aos="zoom-in" data-aos-duration="500">
         <li class="nav-item app--home--skills--container--nav--html" :id="status.html"><a class="nav-link" href="#8" @click="showHtml">HTML5</a></li>
         <li class="nav-item app--home--skills--container--nav--css" :id="status.css"><a class="nav-link" href="#9" @click="showCss">CSS3</a></li>
         <li class="nav-item app--home--skills--container--nav--sass" :id="status.sass"><a class="nav-link" href="#10" @click="showSass">SCSS</a></li>

@@ -26,7 +26,7 @@
     width: $hundred - 80;
     text-align: $center;
     height:$hundredpx - 50;
-    font-size:1.2vw;
+    font-size:$hundredpx - 80;
     display: $flex;
     align-items: $center;
     justify-content: $center;
@@ -83,13 +83,40 @@
          }
      }
 }
+@mixin header-r(){
+    @media screen and(max-width:800px) {
+        &--nav{
+            a{
+
+               
+           }
+            .scale-intro{
+    
+            }
+            .scale-info{
+    
+            }
+            .scale-skills{
+    
+            }
+            .scale-projects{
+    
+            }
+        }
+    }
+    
+}
 @mixin intro-l() {
     &--container{
         text-align: $center;
         align-items: $center;
         justify-content: $center;
         &--social-network{
+            justify-content: $center;
+            align-items: $center;
             &--nav{
+                justify-content: $center;
+                align-items: $center;
                 li{
                     display: $flex;
                     align-items: $center;
@@ -99,10 +126,10 @@
         }
     }
 }
-@mixin s-cards() {
+@mixin s-cards($fg-card) {
     margin:$hundred - 98;
-    width: 12vw;
-    height: 12vw;
+    width: $hundredpx + 80;
+    height: $hundredpx + 80;
     border-radius: $hundred;
     transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
     cursor: pointer;
@@ -111,15 +138,19 @@
         transform: scale(1.1);
         box-shadow:10px 10px 15px rgba(0,0,0,0.5);
         a{
-            transform: scale(1.2);
+            transform: scale(1.1);
             text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
         }
+    }
+    a{
+        color: $fg-card;
+        font-size:$hundredpx - 40;
     }
 }
 @mixin intro-s($bg-color,$fg-color,$bg-card,$fg-card,$github-bg,$twitter-bg,$gitlab-bg,$gitlab-fg,$gmail-bg) {
     padding-bottom: $hundredpx - 25; 
     &--container{
-        height: $hundredpx * 8;
+        height: $hundredpx * 8 + 50;
         background: $bg-color;
         margin-bottom: $hundredpx;
         &--title{
@@ -135,51 +166,65 @@
         }
         &--social-network{
             width: $hundred;
-            justify-content: $center;
-            align-items: $center;
             &--nav{
-                justify-content: $center;
-                align-items: $center;
                 padding: $hundredpx - 90;
                 &--github{
                     background:$github-bg;
-                    @include s-cards();
-                    a{
-                        color: $fg-card;
-                        font-size: 3.5vw;
-                    }
+                    @include s-cards($fg-card);
                 }
                 &--twitter{
                     background:$twitter-bg;
-                    @include s-cards();
-                    a{
-                        color: $fg-card;
-                        font-size: 3.5vw;
-                    }
+                    @include s-cards($fg-card);
                 }
                 &--gitlab{
                     background:$gitlab-bg;
-                    @include s-cards();
-                    
-                    a{
-                        color:$gitlab-fg;
-                        font-size: 3.5vw;
-                    }
+                    @include s-cards($gitlab-fg);
                 }
                 &--phone{
                     background: $bg-card;
-                    @include s-cards();
-                    a{
-                        color: $fg-card;
-                        font-size: 3.5vw;
-                    }
+                    @include s-cards($fg-card);
                 }
                 &--gmail{
                     background: $gmail-bg;
-                    @include s-cards();
-                    a{
-                        color: $fg-card;
-                        font-size: 3.5vw;
+                    @include s-cards($fg-card);
+                }
+            }
+        }
+    }
+}
+@mixin intro-r-800() {
+    width: $hundredpx + 50;
+    height: $hundredpx + 50;
+    i{
+        font-size: $hundredpx - 40;
+    }
+}
+@mixin intro-r() {
+    @media screen and(max-width:800px) {
+        padding-bottom: $hundredpx - 80; 
+        &--container{
+            height: $hundredpx * 8;
+            &--title{
+            font-size: $hundredpx - 60;
+            }
+            &--social-network{
+                width: $hundred;
+                &--nav{
+                    padding: $hundredpx - 90;
+                    &--github{
+                        @include intro-r-800();
+                    }
+                    &--twitter{
+                        @include intro-r-800();
+                    }
+                    &--gitlab{
+                        @include intro-r-800();
+                    }
+                    &--phone{
+                        @include intro-r-800();
+                    }
+                    &--gmail{
+                        @include intro-r-800();
                     }
                 }
             }
@@ -201,14 +246,14 @@
 @mixin information-s($color) {
     &--title{
         font-family: $heading;
-        font-size: 2vw;
+        font-size: $hundredpx - 70;
         font-weight: $bolder;
         color:$color;
     }
     &--container{
         img{
-            width: 16vw;
-            height: 16vw;
+            width: $hundredpx * 2 + 40;
+            height: $hundredpx * 2 + 40;
             border-radius: $hundredpx - 95;
         }
         p{
@@ -221,6 +266,31 @@
            line-height: 2;
            word-spacing: $hundredpx - 97;
         }
+    }
+}
+@mixin information-r() {
+    @media screen and(max-width:800px) {
+        padding: $hundredpx - 100 0px;
+        &--title{
+            font-size: $hundredpx - 70;
+            margin: 0px;
+        }
+        &--container{
+            flex-direction: column;
+            justify-content: $start;
+            align-items: $start;
+            img{
+                width: $hundred;
+                height: $hundredpx * 2 + 40;
+                border-radius: $hundredpx - 95;
+            }
+            p{
+               width: 50ch;
+               padding: $hundredpx - 50 $hundredpx - 100;
+               font-size: $hundredpx - 83;
+               line-height: 1.8;
+            }
+        }   
     }
 }
 @mixin skills-l() {
@@ -244,10 +314,10 @@
     box-shadow: 0 10px 6px -6px #777;
     border: 1px solid #d0e1f9;
 }
-@mixin skills-s($fg-color,$color) {
+@mixin skills-s($fg-color,$color,$color2) {
 &--container{
     &--title{
-        font-size: 2vw;
+        font-size:$hundredpx - 70;
         font-family: $heading;
         color:$fg-color;
         padding-bottom: $hundredpx - 75;
@@ -268,7 +338,7 @@
             a{
                 color: $color;
                 font-family: $heading;
-                font-size: 1.3vw;
+                font-size: 1.5vw;
                 font-weight: $bold;
             }
         }
@@ -280,7 +350,7 @@
     &--content{
         padding: $hundredpx - 75 0;
         height: $hundredpx * 2;
-        font-size: 1.1vw;
+        font-size:$hundredpx - 83;
         font-family: $body;
         line-height: 2;
         font-weight: $bold;
@@ -305,37 +375,37 @@
         }
     }
     &--my-resume{
-        font-size: 2vw;
+        font-size: $hundredpx - 70;
         font-family: $heading;
         color:$fg-color;
         padding-bottom: $hundredpx - 75;
         font-weight: $bolder;
     }
     &--download{
-        background: #283655;
-        border: 5px solid #1e1f26;
-        padding: 15px;
+        background: $color2;
+        border: 5px solid $fg-color;
+        padding: $hundredpx - 85;
         color: $fg-color;
         font-size: 1.2vw;
-        color: #d0e1f9;
-        border-radius: 10px;
+        color: $color;
+        border-radius: $hundredpx - 90;
         font-family: $heading;
-        letter-spacing: 2px;
+        letter-spacing: $hundredpx - 98;
         &:hover{
-             color: #d0e1f9;
+             color: $color;
              text-decoration: $none;
-             animation: chage-fg 800ms forwards;
+             animation: chage-fg 300ms forwards;
              @keyframes chage-fg {
                  0%{
-                    color:#d0e1f9;
-                    background: #283655; 
+                    color:$color;
+                    background: $color2; 
                     transform: scale(1);
                  }
                  100%{
-                    color:#283655;
-                    background:  #d0e1f9;
+                    color:$color2;
+                    background:  $color;
                     font-weight: $bolder;
-                    box-shadow: 8px 8px 8px rgba(0,0,0,.5);
+                    box-shadow: $hundredpx - 92 $hundredpx - 92 $hundredpx - 92 rgba(0,0,0,.5);
                     transform: scale(1.1);
                  }
              }
@@ -343,110 +413,100 @@
     }
 }
 }
-@mixin projects-l() {
-    &--container{
-        &--first-project{
-            &--des{
-                bottom:0;
-                top:153vw;
-                left: 16.35vw;
-                right: 0;
-                i{
-                    bottom: $hundredpx - 94;
-                }
-            }
+@mixin skills-r() {
+    @media screen and(max-width:800px){
+        padding:$hundredpx - 75 0px;
+        .nav-link{
+            padding: 0px;
         }
-        &--second-project{
-            &--des{
-                bottom:0;
-                top:153vw;
-                left: 52.55vw;
-                right: 0;
-                i{
-                    bottom: $hundredpx - 94;
+        &--container{
+            &--content{
+                padding: $hundredpx - 75 0;
+                height: $hundredpx * 2;
+                font-size:$hundredpx - 86;
+                line-height: 2;
+                p{
+                    width: 50ch;
                 }
             }
         }
     }
 }
-@mixin projects-s($fg-color) {
+@mixin projects-l() {
+    padding:$hundredpx - 45 0px;
+    &--container{
+        &--first-project{
+          i{
+            position: $relative;
+            bottom: $hundredpx - 25;
+          }
+        }
+        &--second-project{
+            i{
+              position: $relative;
+              bottom: $hundredpx - 25;
+            }
+        }
+    }
+}
+@mixin projects-s($fg-color,$color,$des-color) {
     &--title{
-        font-size: 2vw;
+        font-size: $hundredpx - 70;
         font-family: $heading;
         color:$fg-color;
         padding-bottom: $hundredpx - 75;
         font-weight: $bolder;
     }
     &--container{
-        height: 500px;
+        a{
+            text-decoration: $none;
+        }
         img{
-            width: 30vw;
-            height: 20vw;
+            width: 400px;
+            height: 300px;
+            border-radius: $hundredpx - 90;
         }
         &--first-project{
-            &--des{
-                width: 30vw;
-                height: 20vw;
-                &:hover{
-                    background: rgba(30, 31, 38,0.6);
-                    p{
-                        visibility: visible;
-                    }
-                    i{
-                        visibility: visible;
-                    }
-                }
-             p{
-                 font-family: $heading;
-                 font-size: 2.5vw;
-                 padding: 0 $hundredpx - 90;
-                 font-weight: bold;
-                 color: #d0e1f9;
-                 text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-                 visibility: hidden;
-             }
-             i{
-                 font-size: 2vw;
-                 color: #d0e1f9;
-                 text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-                 visibility: hidden;
-             }
+            i{
+                color: $des-color;
+                text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+                font-size: 2vw;
+                visibility: $hidden;
+                transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
             }
+           &:hover{
+               i{
+                   visibility: $visible;
+                   transform: scale(1.5);
+               }
+           }
         }
         &--second-project{
-            &--des{
-                width: 30vw;
-                height: 20vw;
-                &:hover{
-                    background: rgba(30, 31, 38,0.6);
-                    p{
-                        visibility: visible;
-                    }
-                    i{
-                        visibility: visible;
-                    }
-                }
-                p{
-                    font-family: $heading;
-                    font-size: 2.5vw;
-                    padding: 0 $hundredpx - 90;
-                    font-weight: bold;
-                    color: #d0e1f9;
-                    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-                    visibility: hidden;
-                }
-                i{
-                    font-size: 2vw;
-                    color: #d0e1f9;
-                    text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
-                    visibility: hidden;
-                }
+            i{
+                color: $des-color;
+                text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+                font-size: 2vw;
+                visibility: $hidden;
+                transition: transform 300ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
             }
+           &:hover{
+               i{
+                   visibility: $visible;
+                   transform: scale(1.5);
+               }
+           }
         }
       }
 }
-@mixin social-network-l() {
-}
-@mixin social-network-s() {
-
+@mixin projects-r() {
+        @media screen and(max-width:800px){
+            padding:$hundredpx - 75 0px;
+            &--container{
+                img{
+                    width: 300px;
+                    height: 200px;
+                    border-radius: $hundredpx - 90;
+                }
+              }
+        }
 }

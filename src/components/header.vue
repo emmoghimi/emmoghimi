@@ -1,11 +1,11 @@
 <template>
-  <div id="header" class="app--home--header">
-      <ul class="app--home--header--nav nav container-fluid position-fixed fixed-top">
+  <div id="header" class="app--home--header" v-on="on()">
+      <ul class="app--home--header--nav nav container-fluid position-fixed fixed-top ">
           <li class="nav-item app--home--header--nav--name"><a class="nav-link" href="#1">Emad Moghimi</a></li>
-          <li :class="'nav-item app--home--header--nav--intro ' + nav.intro" @click="showIntro"><a class="nav-link" href="#3" >Intro</a></li>
-          <li :class="'nav-item app--home--header--nav--information ' + nav.info" @click="showInformation"><a class="nav-link" href="#4">Information</a></li>
-          <li :class="'nav-item app--home--header--nav--skills ' + nav.skills" @click="showSkills"><a class="nav-link" href="#5">Skills</a></li>
-          <li :class="'nav-item app--home--header--nav--projects ' + nav.projects" @click="showProjects"><a class="nav-link" href="#6">Projects</a></li>
+          <li :class="'nav-item app--home--header--nav--intro ' + navClick.intro + navScroll.intro" @click="showIntro"><a class="nav-link" href="#3" >Intro</a></li>
+          <li :class="'nav-item app--home--header--nav--information ' + navClick.info + navScroll.info" @click="showInformation"><a class="nav-link" href="#4">Information</a></li>
+          <li :class="'nav-item app--home--header--nav--skills ' + navClick.skills + navScroll.skills" @click="showSkills"><a class="nav-link" href="#5">Skills</a></li>
+          <li :class="'nav-item app--home--header--nav--projects ' + navClick.projects + navScroll.projects" @click="showProjects"><a class="nav-link" href="#6">Projects</a></li>
       </ul>
   </div>
 </template>
@@ -16,8 +16,14 @@ export default {
   data () {
     return {
       scroll:0,
-      nav:{
-        intro:'scale-intro',
+      navClick:{
+        intro:'',
+        info:'',
+        skills:'',
+        projects:''
+      },
+      navScroll:{
+        intro:'',
         info:'',
         skills:'',
         projects:''
@@ -25,55 +31,92 @@ export default {
     }
   },
   methods:{
+    on(){
+      bus.$on('scrolledToIntro',(data) =>{
+       this.navScroll.intro = ' scale-intro'
+       this.navClick.intro = ''
+       this.navScroll.info = ''
+       this.navScroll.skills = ''
+       this.navScroll.projects = ''
+
+     });
+      bus.$on('scrolledToInfo',(data) =>{
+       this.scroll = data;
+       this.navScroll.intro = ''
+       this.navScroll.info = ' scale-info'
+       this.navClick.info = ''
+       this.navScroll.skills = ''
+       this.navScroll.projects = ''
+     });
+     bus.$on('scrolledToSkills',(data) =>{
+       this.navScroll.intro = ''
+       this.navScroll.info = ''
+       this.navScroll.skills = ' scale-skills'
+       this.navClick.skills = ''
+       this.navScroll.projects = ''
+
+     });
+     bus.$on('scrolledToProjects',(data) =>{
+       this.navScroll.intro = ''
+       this.navScroll.info = ''
+       this.navScroll.skills = ''
+       this.navScroll.projects = ' scale-projects'
+       this.navClick.projects = ''
+
+     });
+    },
     showIntro(){
-      this.nav.intro = 'scale-intro'
-      this.nav.info = ''
-      this.nav.skills = ''
-      this.nav.projects = ''
+        if(this.navClick.intro === ''){
+          this.navClick.intro = 'scale-intro'
+          this.navClick.info = ''
+          this.navClick.skills = ''
+          this.navClick.projects = ''
+        }
         $( document ).ready(function() {
         $("html, body").animate({
         scrollTop: $('#intro').offset().top 
-    }, 500);
-});
-     
-    
+        }, 200);
+        });
     },
     showInformation(){
-      this.nav.intro = ''
-      this.nav.info = 'scale-info'
-      this.nav.skills = ''
-      this.nav.projects = ''
+      if(this.navClick.info === ''){
+        this.navClick.intro = ''
+        this.navClick.info = 'scale-info'
+        this.navClick.skills = ''
+        this.navClick.projects = ''
+      }
       $( document ).ready(function() {
         $("html, body").animate({
         scrollTop: $('#information').offset().top 
-    }, 500);
-});
+      }, 200);
+      });
     },
     showSkills(){
-      this.nav.intro = ''
-      this.nav.info = ''
-      this.nav.skills = 'scale-skills'
-      this.nav.projects = ''
+      if(this.navClick.skills === ''){
+        this.navClick.intro = ''
+        this.navClick.info = ''
+        this.navClick.skills = 'scale-skills'
+        this.navClick.projects = ''
+      }
        $( document ).ready(function() {
         $("html, body").animate({
         scrollTop: $('#skills').offset().top 
-    }, 500);
-});
+      }, 200);
+      });
     },
     showProjects(){
-      this.nav.intro = ''
-      this.nav.info = ''
-      this.nav.skills = ''
-      this.nav.projects = 'scale-projects'
+      if(this.navClick.projects === ''){
+        this.navClick.intro = ''
+        this.navClick.info = ''
+        this.navClick.skills = ''
+        this.navClick.projects = 'scale-projects'
+      }
       $( document ).ready(function() {
         $("html, body").animate({
         scrollTop: $('#projects').offset().top 
-    }, 500);
-});
+      }, 200);
+      });
     }
-  },
-  created(){
-    
   }
 }
 </script>
