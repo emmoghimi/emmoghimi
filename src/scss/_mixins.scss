@@ -13,6 +13,11 @@
 @mixin header-l() {
     &--nav{
         align-items: $center;
+        &--name{
+            display: $flex;
+             align-items: $center;
+             justify-content: $center;
+        }
     }
 }
 @mixin scale($bg-color) {
@@ -22,11 +27,18 @@
     border: 1px solid #d0e1f9;
     transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
 }
+@mixin scale-r() {
+    transform: scale(1.05);
+    box-shadow:0 7px 7px 2px rgba(0,0,0,0.5);
+    border: 1px solid #d0e1f9;
+    transition: all 500ms cubic-bezier(0.165, 0.84, 0.44, 1);
+    height: $hundredpx - 65;
+}
 @mixin nav-items() {
     width: $hundred - 80;
     text-align: $center;
     height:$hundredpx - 50;
-    font-size:$hundredpx - 80;
+    font-size:1.5vw;
     display: $flex;
     align-items: $center;
     justify-content: $center;
@@ -41,9 +53,6 @@
          &--name{
              border: 2px $solid #d0e1f9;
              font-size:1.5vw;
-             display: $flex;
-             align-items: $center;
-             justify-content: $center;
              font-weight:$bold;
              height:$hundredpx - 50;
              width: $hundred - 83;
@@ -67,7 +76,9 @@
             color: $fg-color;
             text-align: $center;
             font-family: $heading;
-            
+            &:hover{
+                color: $fg-color;
+            }
         }
          .scale-intro{
             @include scale($bg-color);
@@ -84,27 +95,31 @@
      }
 }
 @mixin header-r(){
-    @media screen and(max-width:800px) {
-        &--nav{
+@media screen and(max-width:600px){
+    &--nav{
+        height: $hundredpx - 70;
+        li{
             a{
-
-               
-           }
-            .scale-intro{
-    
-            }
-            .scale-info{
-    
-            }
-            .scale-skills{
-    
-            }
-            .scale-projects{
-    
+                font-size: 2.5vw;
             }
         }
-    }
-    
+        &--name{
+           height:$hundredpx - 70;
+       }
+       .scale-intro{
+           @include scale-r();
+        }
+        .scale-info{
+           @include scale-r();
+        }
+        .scale-skills{
+           @include scale-r();
+        }
+        .scale-projects{
+           @include scale-r();
+        }
+    }   
+}
 }
 @mixin intro-l() {
     &--container{
@@ -140,6 +155,9 @@
         a{
             transform: scale(1.1);
             text-shadow: 3px 3px 3px rgba(0,0,0,0.5);
+            &:hover{
+                color: $fg-card;
+            }
         }
     }
     a{
@@ -199,9 +217,29 @@
         font-size: $hundredpx - 40;
     }
 }
+@mixin intro-r-600() {
+    width: $hundredpx + 30;
+    height: $hundredpx + 30;
+    i{
+        font-size: $hundredpx - 50;
+    }
+}
+@mixin intro-r-450() {
+    width: $hundredpx + 15;
+    height: $hundredpx + 15;
+    i{
+        font-size: $hundredpx - 60;
+        display: $flex;
+        text-align: $center;
+        align-self: $center;
+    }
+}
 @mixin intro-r() {
+    @media screen and(max-width:1024px) {
+        padding-bottom: $hundredpx; 
+    }
     @media screen and(max-width:800px) {
-        padding-bottom: $hundredpx - 80; 
+        padding-bottom: $hundredpx - 100; 
         &--container{
             height: $hundredpx * 8;
             &--title{
@@ -225,6 +263,71 @@
                     }
                     &--gmail{
                         @include intro-r-800();
+                    }
+                }
+            }
+        }
+    }
+    @media screen and(max-width:600px){
+        padding-bottom: $hundredpx - 50; 
+        &--container{
+            height: $hundredpx * 8;
+            &--title{
+            font-size: $hundredpx - 70;
+            }
+            &--social-network{
+                width: $hundred;
+                &--nav{
+                    padding: $hundredpx - 90;
+                    &--github{
+                        @include intro-r-600();
+                    }
+                    &--twitter{
+                        @include intro-r-600();
+                    }
+                    &--gitlab{
+                        @include intro-r-600();
+                    }
+                    &--phone{
+                        @include intro-r-600();
+                    }
+                    &--gmail{
+                        @include intro-r-600();
+                    }
+                }
+            }
+        }
+    }
+    @media screen and(max-width:450px){
+        padding-bottom: $hundredpx - 80; 
+        &--container{
+            height: $hundredpx * 8;
+            &--title{
+            font-size: $hundredpx - 80;
+            text-shadow: 0 -2px 0 #333,
+                    0 6px 8px rgba(0,0,0,.4),
+                    0 9px 10px rgba(0,0,0,.15),
+                    0 30px 10px rgba(0,0,0,.18),
+                    0 15px 10px rgba(0,0,0,.21);
+            }
+            &--social-network{
+                width: $hundred;
+                &--nav{
+                    padding: $hundredpx - 90;
+                    &--github{
+                        @include intro-r-450();
+                    }
+                    &--twitter{
+                        @include intro-r-450();
+                    }
+                    &--gitlab{
+                        @include intro-r-450();
+                    }
+                    &--phone{
+                        @include intro-r-450();
+                    }
+                    &--gmail{
+                        @include intro-r-450();
                     }
                 }
             }
@@ -270,7 +373,7 @@
 }
 @mixin information-r() {
     @media screen and(max-width:800px) {
-        padding: $hundredpx - 100 0px;
+        padding: $hundredpx + 100 0px;
         &--title{
             font-size: $hundredpx - 70;
             margin: 0px;
@@ -285,10 +388,31 @@
                 border-radius: $hundredpx - 95;
             }
             p{
-               width: 50ch;
+               width: 60ch;
                padding: $hundredpx - 50 $hundredpx - 100;
-               font-size: $hundredpx - 83;
+               font-size: $hundredpx - 86;
                line-height: 1.8;
+            }
+        }   
+    }
+    @media screen and(max-width:600px) {
+        padding: $hundredpx - 10 0px;
+        &--title{
+            font-size: 5vw;
+            margin: $hundredpx - 85;
+        }
+        &--container{
+            flex-direction: column;
+            justify-content: $center;
+            align-items: $center;
+            img{
+                width: $hundredpx + 50;
+                height: $hundredpx + 50;
+                border-radius: $hundredpx ;
+            }
+            p{
+               width: 45ch;
+               font-size: 3vw;
             }
         }   
     }
@@ -335,6 +459,10 @@
             transition: transform 500ms cubic-bezier(0.18, 0.89, 0.32, 1.28);
             border: 1px $solid $fg-color;
             border-right: 1px $solid $color;
+            &:last-child{
+                border-right: 0px solid black ;
+            }
+            cursor: pointer;
             a{
                 color: $color;
                 font-family: $heading;
@@ -414,6 +542,9 @@
 }
 }
 @mixin skills-r() {
+    @media screen and(max-width:1024px){
+        padding:$hundredpx + 100 0px;
+    }
     @media screen and(max-width:800px){
         padding:$hundredpx - 75 0px;
         .nav-link{
@@ -427,6 +558,42 @@
                 line-height: 2;
                 p{
                     width: 50ch;
+                }
+            }
+        }
+    }
+    @media screen and(max-width:600px){
+        padding:$hundredpx - 65 0px;
+        .nav-link{
+            padding: 0px;
+        }
+        &--container{
+            &--my-resume{
+                font-size: 4vw;
+                padding-bottom: $hundredpx - 75;
+                margin: {
+                    left: $auto;
+                    right: $auto;
+                }
+            }
+            &--download{
+                font-size: 2.2vw;
+                border-width: 2px;
+                margin: {
+                    left: $auto;
+                    right: $auto;
+                }
+            }
+            &--title{
+                font-size: 4vw;
+            }
+            &--content{
+                padding: $hundredpx - 75 0;
+                height: $hundredpx;
+                font-size:2vw;
+                line-height: 2;
+                p{
+                    width: 55ch;
                 }
             }
         }
@@ -460,6 +627,10 @@
     &--container{
         a{
             text-decoration: $none;
+            &:hover{
+                color: $des-color;
+                text-decoration: none;
+            }
         }
         img{
             width: 400px;
@@ -499,12 +670,34 @@
       }
 }
 @mixin projects-r() {
+    @media screen and(max-width:10240px){
+        padding:$hundredpx + 100 0px;
+    }
         @media screen and(max-width:800px){
-            padding:$hundredpx - 75 0px;
+            padding:$hundredpx + 100 0px;
             &--container{
                 img{
                     width: 300px;
                     height: 200px;
+                    border-radius: $hundredpx - 90;
+                }
+              }
+        }
+        @media screen and(max-width:600px){
+            padding:$hundredpx + 20 0px;
+            &--title{
+                font-size: 3.5vw;
+                padding: $hundredpx - 85;
+            }
+            a{
+                width: $hundred;
+                height: $hundredpx * 2;
+                margin: $hundredpx - 80 0;
+            }
+            &--container{
+                img{
+                    width: $hundred - 50;
+                    height: $hundredpx * 2;
                     border-radius: $hundredpx - 90;
                 }
               }

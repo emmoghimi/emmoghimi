@@ -3,14 +3,14 @@
     <div class="app--home--skills--container container d-flex flex-column align-items-start">
       <p class="app--home--skills--container--title">Skills</p>
       <ul class="app--home--skills--container--nav d-flex align-items-center container nav" data-aos="zoom-in" data-aos-duration="500">
-        <li class="nav-item app--home--skills--container--nav--html" :id="status.html"><a class="nav-link" href="#8" @click="showHtml">HTML5</a></li>
-        <li class="nav-item app--home--skills--container--nav--css" :id="status.css"><a class="nav-link" href="#9" @click="showCss">CSS3</a></li>
-        <li class="nav-item app--home--skills--container--nav--sass" :id="status.sass"><a class="nav-link" href="#10" @click="showSass">SCSS</a></li>
-        <li class="nav-item app--home--skills--container--nav--bootstrap" :id="status.bootstrap"><a class="nav-link" href="#11" @click="showBootstrap">Bootstrap</a></li>
-        <li class="nav-item app--home--skills--container--nav--js" :id="status.js"><a class="nav-link" href="#12" @click="showJs">JavaScript</a></li>
-        <li class="nav-item app--home--skills--container--nav--jquery" :id="status.jquery"><a class="nav-link" href="#13" @click="showJquery">jQuery</a></li>
-        <li class="nav-item app--home--skills--container--nav--vue" :id="status.vue"><a class="nav-link" href="#14" @click="showVue">Vue.js</a></li>
-        <li class="nav-item app--home--skills--container--nav--git" :id="status.git"><a class="nav-link" href="#15" @click="showGit">Git</a></li>
+        <li class="nav-item app--home--skills--container--nav--html" :id="status.html"  @click="showHtml"><a class="nav-link" href="#8">HTML5</a></li>
+        <li class="nav-item app--home--skills--container--nav--css" :id="status.css"  @click="showCss"><a class="nav-link" href="#9">CSS3</a></li>
+        <li class="nav-item app--home--skills--container--nav--sass" :id="status.sass" @click="showSass"><a class="nav-link" href="#10" >SCSS</a></li>
+        <li class="nav-item app--home--skills--container--nav--bootstrap" :id="status.bootstrap" @click="showBootstrap"><a class="nav-link" href="#11" >Bootstrap</a></li>
+        <li class="nav-item app--home--skills--container--nav--js" :id="status.js"  @click="showJs"><a class="nav-link" href="#12">JavaScript</a></li>
+        <li class="nav-item app--home--skills--container--nav--jquery" :id="status.jquery" @click="showJquery"><a class="nav-link" href="#13">jQuery</a></li>
+        <li class="nav-item app--home--skills--container--nav--vue" :id="status.vue"  @click="showVue"><a class="nav-link" href="#14">Vue.js</a></li>
+        <li class="nav-item app--home--skills--container--nav--git" :id="status.git" @click="showGit"><a class="nav-link" href="#15">Git</a></li>
       </ul>
       <div class="app--home--skills--container--content d-flex">
           <p class="app--home--skills--container--content--html" v-show="descriptions.html">I learned HTML to build the skeleton of the page and also to put content on the page as every front-end developer needs to know HTML because it's the beginning of becoming a front-end developer. </p>
