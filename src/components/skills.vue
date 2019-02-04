@@ -1,8 +1,8 @@
 <template>
   <div id="skills" class="app--home--skills ">
-    <div class="app--home--skills--container container d-flex flex-column align-items-start">
-      <p class="app--home--skills--container--title">Skills</p>
-      <ul class="app--home--skills--container--nav d-flex align-items-center container nav" data-aos="zoom-in" data-aos-duration="500">
+    <div class="app--home--skills--container container-fluid d-flex flex-column align-items-start">
+      <p class="app--home--skills--container--title container">Skills</p>
+      <ul class="app--home--skills--container--nav d-flex align-items-center container-fluid nav" data-aos="zoom-in" data-aos-duration="500">
         <li class="nav-item app--home--skills--container--nav--html" :id="status.html"  @click="showHtml"><a class="nav-link" href="#8">HTML5</a></li>
         <li class="nav-item app--home--skills--container--nav--css" :id="status.css"  @click="showCss"><a class="nav-link" href="#9">CSS3</a></li>
         <li class="nav-item app--home--skills--container--nav--sass" :id="status.sass" @click="showSass"><a class="nav-link" href="#10" >SCSS</a></li>
@@ -17,13 +17,11 @@
           <p class="app--home--skills--container--content--css" v-show="descriptions.css" >We all should use CSS to design and layout the content of the page so I use it because that's what makes websites look good and beautiful. <br> but it's not magic, the beauty of the website depends on the designer.</p>
           <p class="app--home--skills--container--content--sass" v-show="descriptions.sass">There are some preprocessors for CSS I chose SASS between the most popular of them completely blind I just read the name in an article and start learning later i found out there's other preprocessor's. they are really helpful for me cause makes my work cleaner and faster.</p>
           <p class="app--home--skills--container--content--bootstrap" v-show="descriptions.bootstrap">CSS has a lot of frameworks and they all has their own unique features and choosing between them is depends on what you need, I chose bootstrap because it's fast and easy to use and learn and it's one of the most popular CSS frameworks. </p>
-          <p class="app--home--skills--container--content--js" v-show="descriptions.js">We can design and layout a website with HTML and CSS but users can only watch it and there is nothing to communicate with the so-called it's static, I'm using javascript to make websites dynamic and make them interactive for users so they can do it by sending requests to the server and server give them responses.</p>
+          <p class="app--home--skills--container--content--js" v-show="descriptions.js">I'm using javascript to make websites dynamic and make them interactive for users so they can do it by sending requests to the server and server give them responses.</p>
           <p class="app--home--skills--container--content--jquery" v-show="descriptions.jquery">As the creator's of jquery says write less, do more jQuery library help's me to use javascript in an easier way and makes my work cleaner and faster like CSS frameworks.</p>
           <p class="app--home--skills--container--content--vue" v-show="descriptions.vue">Vue is one of the most and popular javascript frameworks, i preferred  to use vue instead of react and angular because it's a small, fast and flexible framework that allows me to reach better performance than others and faster applications.</p>
           <p class="app--home--skills--container--content--git" v-show="descriptions.git">Any application has multiple versions GIT is really helpful to make multiple versions of your application and manage them, like go back on the previous version of your code and it’s also a great tool for team working.</p>
       </div>
-      <p class="app--home--skills--container--my-resume">Resume</p>
-      <a class="app--home--skills--container--download" href="https://docs.google.com/document/export?format=pdf&id=1d67L-Ls0OAq5h0bwnUHNTmMicTGQMsdzSPqQXkRInbk&token=AC4w5VgkhWk9AHPRrHhF_GWf3hY0bYZnVQ%3A1548604293746&ouid=101941237622680169197&includes_info_params=true" download><i class="fas fa-download"></i> Download</a>
     </div>
   </div>
 </template>

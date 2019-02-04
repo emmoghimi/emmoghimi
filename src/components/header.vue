@@ -1,9 +1,8 @@
 <template>
   <div id="header" class="app--home--header" v-on="on()">
-      <ul class="app--home--header--nav nav container-fluid position-fixed fixed-top ">
-          <li class="nav-item app--home--header--nav--name"><a class="nav-link" href="#1">Emad Moghimi</a></li>
+      <ul class="app--home--header--nav nav container-fluid position-fixed fixed-top d-flex justify-content-center">
           <li :class="'nav-item app--home--header--nav--intro ' + navClick.intro + navScroll.intro" @click="showIntro"><a class="nav-link" href="#3" >Intro</a></li>
-          <li :class="'nav-item app--home--header--nav--information ' + navClick.info + navScroll.info" @click="showInformation"><a class="nav-link" href="#4">Information</a></li>
+          <li :class="'nav-item app--home--header--nav--information ' + navClick.info + navScroll.info" @click="showInformation"><a class="nav-link" href="#4">Aboutme</a></li>
           <li :class="'nav-item app--home--header--nav--skills ' + navClick.skills + navScroll.skills" @click="showSkills"><a class="nav-link" href="#5">Skills</a></li>
           <li :class="'nav-item app--home--header--nav--projects ' + navClick.projects + navScroll.projects" @click="showProjects"><a class="nav-link" href="#6">Projects</a></li>
       </ul>

@@ -13,11 +13,6 @@
 @mixin header-l() {
     &--nav{
         align-items: $center;
-        &--name{
-            display: $flex;
-             align-items: $center;
-             justify-content: $center;
-        }
     }
 }
 @mixin scale($bg-color) {
@@ -35,7 +30,7 @@
     height: $hundredpx - 65;
 }
 @mixin nav-items() {
-    width: $hundred - 80;
+    width: 20%;
     text-align: $center;
     height:$hundredpx - 50;
     font-size:1.5vw;
@@ -50,16 +45,6 @@
          height: $hundredpx - 50;
          box-shadow: $hundredpx - 95 $hundredpx - 95 $hundredpx - 95 rgba(0,0,0,0.5);
          text-align: $center;
-         &--name{
-             border: 2px $solid #d0e1f9;
-             font-size:1.5vw;
-             font-weight:$bold;
-             height:$hundredpx - 50;
-             width: $hundred - 83;
-             margin-right: $hundred - 97;
-             text-align: $center;
-             letter-spacing: $hundredpx - 98;
-         }
          &--intro{
             @include nav-items();
         }
@@ -103,9 +88,6 @@
                 font-size: 2.5vw;
             }
         }
-        &--name{
-           height:$hundredpx - 70;
-       }
        .scale-intro{
            @include scale-r();
         }
@@ -167,9 +149,15 @@
 }
 @mixin intro-s($bg-color,$fg-color,$bg-card,$fg-card,$github-bg,$twitter-bg,$gitlab-bg,$gitlab-fg,$gmail-bg) {
     padding-bottom: $hundredpx - 25; 
+    &--bg{
+        width: 100%;
+        position: absolute;
+        z-index: -2;
+        height: $hundredpx * 8 + 50;
+        filter: blur(5px);
+    }
     &--container{
         height: $hundredpx * 8 + 50;
-        background: $bg-color;
         margin-bottom: $hundredpx;
         &--title{
             color:$fg-color;
@@ -339,21 +327,65 @@
     &--title{
         display: $flex;
         justify-content: $start;
-        margin-left: $hundredpx - 15;
     }
     &--container{
         align-items: $center;
-        justify-content: $center;
+        justify-content: $start;
     }
 }
-@mixin information-s($color) {
+@mixin information-s($color,$fg-color,$color2) {
+    &--my-resume{
+        font-size: $hundredpx - 70;
+        font-family: $heading;
+        color:$fg-color;
+        padding-bottom: $hundredpx - 75;
+        font-weight: $bolder;
+        background: $color;
+        padding-bottom: 100px;
+        width: $hundred - 15;
+        padding-left: $hundredpx;
+    }
+    &--download{
+        background: $color2;
+        border: 5px solid $color;
+        padding: $hundredpx - 85;
+        margin-left: $hundredpx;
+        margin-top: -100px;
+        color: $fg-color;
+        font-size: 1.2vw;
+        border-radius: $hundredpx - 90;
+        font-family: $heading;
+        letter-spacing: $hundredpx - 98;
+        width: $hundredpx * 2;
+        text-align: $center;
+        transition: transform 500ms cubic-bezier(0.175, 0.885, 0.32, 1.275);
+        &:hover{
+             color: $fg-color;
+             text-decoration: $none;
+             transform: scale(1.1);
+        }
+    }
     &--title{
         font-family: $heading;
         font-size: $hundredpx - 70;
         font-weight: $bolder;
-        color:$color;
+        color:$fg-color;
+        background:$color;
+        margin-bottom: 0px;
+        width: 300px;
+        margin-bottom: -100px;
+        padding-left: $hundredpx !important;
+        padding-top: 25px;
+        border-bottom: 2px solid #d0e1f9;
+        position: relative;
+        display: inline;
+        padding-bottom: 15px;
     }
     &--container{
+        background:$color;
+        width: $hundred - 15;
+        padding-left: $hundredpx;
+        padding-top: 100px;
         img{
             width: $hundredpx * 2 + 40;
             height: $hundredpx * 2 + 40;
@@ -364,8 +396,7 @@
            padding: $hundredpx - 50;
            font-family: $body;
            font-size: $hundredpx - 83;
-           font-weight: $bold;
-           color: $color;
+           color: $fg-color;
            line-height: 2;
            word-spacing: $hundredpx - 97;
         }
@@ -428,8 +459,8 @@
             }
         }
         &--content{
-            align-items: $center;
             justify-content: $center;
+            margin-top:$hundredpx - 50;
         }
     }
 }
@@ -444,11 +475,9 @@
         font-size:$hundredpx - 70;
         font-family: $heading;
         color:$fg-color;
-        padding-bottom: $hundredpx - 75;
         font-weight: $bolder;
     }
     &--nav{
-        margin: $hundredpx - 75 0;
         &--html{
             border-top-left-radius: $hundredpx - 90;
             border-bottom-left-radius: $hundredpx - 90;
@@ -476,8 +505,6 @@
         }
     }
     &--content{
-        padding: $hundredpx - 75 0;
-        height: $hundredpx * 2;
         font-size:$hundredpx - 83;
         font-family: $body;
         line-height: 2;
@@ -499,43 +526,6 @@
                     transform: scale(1,1);
                     filter: blur(0px);
                 }
-             }
-        }
-    }
-    &--my-resume{
-        font-size: $hundredpx - 70;
-        font-family: $heading;
-        color:$fg-color;
-        padding-bottom: $hundredpx - 75;
-        font-weight: $bolder;
-    }
-    &--download{
-        background: $color2;
-        border: 5px solid $fg-color;
-        padding: $hundredpx - 85;
-        color: $fg-color;
-        font-size: 1.2vw;
-        color: $color;
-        border-radius: $hundredpx - 90;
-        font-family: $heading;
-        letter-spacing: $hundredpx - 98;
-        &:hover{
-             color: $color;
-             text-decoration: $none;
-             animation: chage-fg 300ms forwards;
-             @keyframes chage-fg {
-                 0%{
-                    color:$color;
-                    background: $color2; 
-                    transform: scale(1);
-                 }
-                 100%{
-                    color:$color2;
-                    background:  $color;
-                    font-weight: $bolder;
-                    box-shadow: $hundredpx - 92 $hundredpx - 92 $hundredpx - 92 rgba(0,0,0,.5);
-                    transform: scale(1.1);
-                 }
              }
         }
     }

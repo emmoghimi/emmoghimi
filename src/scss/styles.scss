@@ -13,7 +13,7 @@
             @include intro-r();
         }
         &--information{
-            @include information-s(#1e1f26);
+            @include information-s(#1e1f26,#d0e1f9,#283655);
             @include information-r();
         }
         &--skills{
